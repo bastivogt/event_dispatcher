@@ -2,6 +2,7 @@ require './classes/event_dispatcher'
 require './classes/test'
 
 t = Test.new
+
 def t.on_start(name)
   puts "on start | name: #{name}"
 end

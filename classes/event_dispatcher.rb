@@ -8,8 +8,13 @@ module SV
     end
 
 
+    def listeners_empty?
+      @listeners.empty?
+    end
 
-    def has_listener(type, listener)
+
+
+    def has_listener?(type, listener)
       @listeners.each do |l|
         if l[:type] == type && l[:listener] == listener
           return true
@@ -21,7 +26,7 @@ module SV
 
 
     def add_listener(type, listener)
-      if has_listener type, listener
+      if has_listener? type, listener
         return
       end
       @listeners.push({type: type, listener: listener})
@@ -41,7 +46,7 @@ module SV
 
 
 
-    def dispatch(type, *params)
+    def dispatch_event(type, *params)
       @listeners.each do |l|
         if l[:type] == type && respond_to?(l[:listener])
           send l[:listener], *params

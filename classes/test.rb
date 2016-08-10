@@ -7,12 +7,12 @@ class Test
 
   def loop
     name = "Seppel"
-    dispatch "on_start", name
+    dispatch_event "on_start", name
     @count = 0
     while @count < 10
       @count += 1
-      dispatch "on_change", @count
+      dispatch_event "on_change", @count
     end
-    dispatch "on_finish"
+    dispatch_event "on_finish"
   end
 end
