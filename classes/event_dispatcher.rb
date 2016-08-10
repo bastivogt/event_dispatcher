@@ -32,7 +32,7 @@ module SV
 
     def remove_listener(type, listener)
       @listeners.each do |l|
-        if l[:type] == type && l[:listener]
+        if l[:type] == type && l[:listener] == listener
           @listeners.delete l
         end
       end
