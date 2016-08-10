@@ -6,11 +6,12 @@ class Test
   end
 
   def loop
-    dispatch "on_start"
+    name = "Seppel"
+    dispatch "on_start", name
     @count = 0
     while @count < 10
       @count += 1
-      dispatch "on_change"
+      dispatch "on_change", @count
     end
     dispatch "on_finish"
   end

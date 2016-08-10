@@ -2,12 +2,12 @@ require './classes/event_dispatcher'
 require './classes/test'
 
 t = Test.new
-def t.on_start()
-  puts "on start"
+def t.on_start(name)
+  puts "on start | name: #{name}"
 end
 
-def t.on_change
-  puts "on change | count: #{@count}"
+def t.on_change(c)
+  puts "on change | count: #{c}"
 end
 
 def t.on_finish
