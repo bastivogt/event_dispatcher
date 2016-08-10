@@ -11,8 +11,8 @@ def t.on_change(c)
   puts "on change | count: #{c}"
 end
 
-def t.on_finish
-  puts "on finish"
+def t.on_finish(p1, p2)
+  puts "on finish | #{p1}, #{p2}"
 end
 
 t.add_listener "on_start", :on_start
