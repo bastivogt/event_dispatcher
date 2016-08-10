@@ -41,10 +41,10 @@ module SV
 
 
 
-    def dispatch(type, *param)
+    def dispatch(type, *params)
       @listeners.each do |l|
         if l[:type] == type && respond_to?(l[:listener])
-          send l[:listener], *param
+          send l[:listener], *params
         end
       end
     end

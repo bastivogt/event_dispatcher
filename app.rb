@@ -18,4 +18,6 @@ t.add_listener "on_start", :on_start
 t.add_listener "on_change", :on_change
 t.add_listener "on_finish", :on_finish
 
+# t.remove_listener "on_change", :on_change
+
 t.loop
